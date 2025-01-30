@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReturnsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateReturnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('returns', function (Blueprint $table) {
+        Schema::create('returnsItem', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('item_id');
             $table->integer('quantity');
@@ -43,4 +43,4 @@ class CreateReturnsTable extends Migration
     {
         Schema::dropIfExists('returns');
     }
-}
+};
